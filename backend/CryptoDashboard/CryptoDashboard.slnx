@@ -1,4 +1,6 @@
 <Solution>
   <Project Path="CryptoDashboard.Api/CryptoDashboard.Api.csproj" />
+  <Project Path="CryptoDashboard.DbUp/CryptoDashboard.DbUp.csproj" />
+  <Project Path="CryptoDashboard.Infrastructure/CryptoDashboard.Infrastructure.csproj" />
   <Project Path="CryptoDashboard.Tests/CryptoDashboard.Tests.csproj" />
 </Solution>

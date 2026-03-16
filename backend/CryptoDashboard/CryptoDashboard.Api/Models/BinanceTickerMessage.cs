@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace CryptoDashboard.Api.Models;
 
-public sealed record BinanceTickerMessage
+internal sealed record BinanceTickerMessage
 {
     [JsonPropertyName("e")]
     public string EventType { get; init; } = "";
@@ -14,49 +14,49 @@ public sealed record BinanceTickerMessage
     public string Symbol { get; init; } = "";
 
     [JsonPropertyName("p")]
-    public string PriceChange { get; init; } = "";
+    public decimal PriceChange { get; init; }
 
     [JsonPropertyName("P")]
-    public string PriceChangePercent { get; init; } = "";
+    public decimal PriceChangePercent { get; init; }
 
     [JsonPropertyName("w")]
-    public string WeightedAveragePrice { get; init; } = "";
+    public decimal WeightedAveragePrice { get; init; }
 
     [JsonPropertyName("x")]
-    public string FirstTradeBeforeWindowPrice { get; init; } = "";
+    public decimal FirstTradeBeforeWindowPrice { get; init; }
 
     [JsonPropertyName("c")]
-    public string LastPrice { get; init; } = "";
+    public decimal LastPrice { get; init; }
 
     [JsonPropertyName("Q")]
-    public string LastQuantity { get; init; } = "";
+    public decimal LastQuantity { get; init; }
 
     [JsonPropertyName("b")]
-    public string BestBidPrice { get; init; } = "";
+    public decimal BestBidPrice { get; init; }
 
     [JsonPropertyName("B")]
-    public string BestBidQuantity { get; init; } = "";
+    public decimal BestBidQuantity { get; init; }
 
     [JsonPropertyName("a")]
-    public string BestAskPrice { get; init; } = "";
+    public decimal BestAskPrice { get; init; }
 
     [JsonPropertyName("A")]
-    public string BestAskQuantity { get; init; } = "";
+    public decimal BestAskQuantity { get; init; }
 
     [JsonPropertyName("o")]
-    public string OpenPrice { get; init; } = "";
+    public decimal OpenPrice { get; init; }
 
     [JsonPropertyName("h")]
-    public string HighPrice { get; init; } = "";
+    public decimal HighPrice { get; init; }
 
     [JsonPropertyName("l")]
-    public string LowPrice { get; init; } = "";
+    public decimal LowPrice { get; init; }
 
     [JsonPropertyName("v")]
-    public string TotalTradedBaseAssetVolume { get; init; } = "";
+    public decimal TotalTradedBaseAssetVolume { get; init; }
 
     [JsonPropertyName("q")]
-    public string TotalTradedQuoteAssetVolume { get; init; } = "";
+    public decimal TotalTradedQuoteAssetVolume { get; init; }
 
     [JsonPropertyName("O")]
     public long StatisticsOpenTime { get; init; }

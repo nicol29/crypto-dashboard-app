@@ -4,10 +4,15 @@
         <TargetFramework>net10.0</TargetFramework>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
+        <UserSecretsId>69cf64b3-b4fe-4ee1-afbc-af0d4792790e</UserSecretsId>
     </PropertyGroup>
 
     <ItemGroup>
         <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.3"/>
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\CryptoDashboard.Infrastructure\CryptoDashboard.Infrastructure.csproj" />
     </ItemGroup>
 
 </Project>

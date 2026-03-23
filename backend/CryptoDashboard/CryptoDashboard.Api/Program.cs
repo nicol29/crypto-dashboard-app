@@ -20,11 +20,6 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-app.MapGet("/coinprice", () =>
-    {
-        
-    })
-    .WithName("GetCoinPrice");
+app.RegisterEndpoints();
 
 app.Run();

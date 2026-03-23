@@ -12,6 +12,14 @@ builder.Services.Configure<BinanceOptions>(builder.Configuration.GetSection(Bina
 builder.Services.AddHostedService<BinanceWorkerService>();
 builder.Services.Configure<CoinGeckoOptions>(builder.Configuration.GetSection(CoinGeckoOptions.ConfigKey));
 
+builder.Services.AddMediatR((cfg) =>
+{
+    var mediatROptions = builder.Configuration.GetSection(MediatROptions.ConfigKey).Get<MediatROptions>();
+    
+    cfg.RegisterServicesFromAssemblies(typeof(Program).Assembly);
+    cfg.LicenseKey = mediatROptions?.LicenseKey;
+});
+
 builder.Services.AddHttpClient<CoinGeckoClient>(HttpClientNames.CoinGeckoApi, (serviceProvider, client) =>
 {
     var coinGeckoOptions = serviceProvider.GetRequiredService<IOptions<CoinGeckoOptions>>().Value;

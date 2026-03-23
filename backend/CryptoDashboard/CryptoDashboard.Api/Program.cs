@@ -2,6 +2,7 @@ using CryptoDashboard.Api.Configurations;
 using CryptoDashboard.Api.Extensions;
 using CryptoDashboard.Api.Integrations.Binance;
 using CryptoDashboard.Api.Integrations.CoinGecko;
+using CryptoDashboard.Api.Services;
 using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,7 +10,6 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.Configure<BinanceOptions>(builder.Configuration.GetSection(BinanceOptions.ConfigKey));
-builder.Services.AddHostedService<BinanceWorkerService>();
 builder.Services.Configure<CoinGeckoOptions>(builder.Configuration.GetSection(CoinGeckoOptions.ConfigKey));
 
 builder.Services.AddMediatR((cfg) =>
@@ -35,6 +35,7 @@ builder.Services.AddHttpClient<BinanceClient>(HttpClientNames.BinanceApi, (servi
     client.BaseAddress = new Uri(binanceOptions.ApiUrl);
     client.DefaultRequestHeaders.Add("Accept", "application/json");
 });
+// builder.Services.AddHostedService<BinanceWorkerService>();
 builder.Services.AddOpenApi();
 
 var app = builder.Build();

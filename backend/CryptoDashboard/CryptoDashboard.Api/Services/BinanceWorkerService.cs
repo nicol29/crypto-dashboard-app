@@ -29,7 +29,7 @@ public class BinanceWorkerService : BackgroundService
     {
         _logger.LogInformation("Worker started at {time}", DateTimeOffset.Now);
         
-        await _clientWebSocket.ConnectAsync(new Uri(_binanceOptions.WebSocketUrl), stoppingToken);
+        await _clientWebSocket.ConnectAsync(new Uri($"{_binanceOptions.WebSocketUrl}/ws/btceur@ticker"), stoppingToken);
         
         while (!stoppingToken.IsCancellationRequested && _clientWebSocket.State == WebSocketState.Open)
         {

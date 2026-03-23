@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace CryptoDashboard.Api.Models;
+namespace CryptoDashboard.Api.Integrations.Binance.Dtos;
 
 internal sealed record BinanceTickerMessage
 {

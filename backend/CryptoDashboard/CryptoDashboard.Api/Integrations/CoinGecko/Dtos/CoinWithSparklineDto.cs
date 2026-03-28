@@ -29,7 +29,7 @@ public class CoinWithSparklineDto
     public decimal FullyDilutedValuation { get; init; }
     
     [JsonPropertyName("total_volume")]
-    public int TotalVolume { get; init; }
+    public long TotalVolume { get; init; }
     
     [JsonPropertyName("high_24h")]
     public decimal High24H { get; init; }
